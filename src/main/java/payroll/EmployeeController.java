@@ -1,6 +1,6 @@
 package payroll;
 
-import java.util.List;
+import java.util.*;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,8 +29,11 @@ class EmployeeController {
     // end::get-aggregate-root[]
 
     @PostMapping("/employees")
-    Employee newEmployee(@RequestBody Employee newEmployee) {
-        return repository.save(newEmployee);
+    Employee newEmployee(@RequestBody Employee newEmployee) throws Exception {
+        if (!repository.findAll().toString().contains(newEmployee.getName())) {
+            return repository.save(newEmployee);
+        }
+        throw new Exception();
     }
 
     // Single item
@@ -42,6 +45,70 @@ class EmployeeController {
                 .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
+    @GetMapping("/employees/dept")
+    List<String> allUniqueDept() {
+        List<String> dept = new ArrayList<>();
+        for (Employee i: repository.findAll()) {
+            if (!dept.contains(i.getRole())) {
+                dept.add(i.getRole());
+            }
+        }
+        return dept;
+    }
+
+    @GetMapping("/employees/moreThan50")
+    List<Employee> getMoreThan50() {
+        List<Employee> lst = new ArrayList<>();
+        for (Employee i: repository.findAll()) {
+            if (i.getAge() > 50) {
+                lst.add(i);
+            }
+        }
+        return lst;
+    }
+
+    @GetMapping("/employees/lessThan30")
+    List<Employee> getLessThan30() {
+        List<Employee> lst = new ArrayList<>();
+        for (Employee i: repository.findAll()) {
+            if (i.getAge() < 30) {
+                lst.add(i);
+            }
+        }
+        return lst;
+    }
+
+    @GetMapping("/employees/fullReport")
+    Map<String, Integer>fullReport() {
+
+        Map<String, Integer> report = new HashMap();
+
+        int totalEmployees = repository.findAll().size();
+        List<Integer> listOfAges = new ArrayList<>();
+        List<Integer> listOfSalaries = new ArrayList<>();
+
+        for (Employee i: repository.findAll()) {
+            listOfAges.add(i.getAge());
+            listOfSalaries.add(i.getSalary());
+        }
+        int sumOfAges = listOfAges.stream().mapToInt(Integer::intValue).sum();
+        int avgOfAges = Math.floorDiv(sumOfAges, totalEmployees);
+
+        int sumOfSalaries = listOfSalaries.stream().mapToInt(Integer::intValue).sum();
+        int avgOfSalaries = Math.floorDiv(sumOfSalaries, totalEmployees);
+
+        int maxSalary = Collections.max(listOfSalaries);
+        int minSalary = Collections.min(listOfSalaries);
+
+        report.put("Total Employees", totalEmployees);
+        report.put("Average Age", avgOfAges);
+        report.put("Average Salary", avgOfSalaries);
+        report.put("Maximum Salary", maxSalary);
+        report.put("Minimum Salary", minSalary);
+
+        return report;
+    }
+
     @PutMapping("/employees/{id}")
     Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) {
 
@@ -49,6 +116,8 @@ class EmployeeController {
                 .map(employee -> {
                     employee.setName(newEmployee.getName());
                     employee.setRole(newEmployee.getRole());
+                    employee.setAge(newEmployee.getAge());
+                    employee.setSalary(newEmployee.getSalary());
                     return repository.save(employee);
                 })
                 .orElseGet(() -> {

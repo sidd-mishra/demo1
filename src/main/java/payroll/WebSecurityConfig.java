@@ -2,6 +2,7 @@ package payroll;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -20,9 +21,10 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/employees").authenticated()
                         .requestMatchers("/employees/*").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/employees").authenticated()
                 )
                 .httpBasic();
-
+        http.csrf().disable();
         return http.build();
     }
 
@@ -31,8 +33,9 @@ public class WebSecurityConfig {
         UserDetails user1 = User.withDefaultPasswordEncoder()
                 .username("user1")
                 .password("password1")
-                .roles("USER")
+                .roles("ADMIN")
                 .build();
+
 
         // add another authenticated user
         UserDetails user2 = User.withDefaultPasswordEncoder()
