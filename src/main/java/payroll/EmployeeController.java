@@ -1,6 +1,7 @@
 package payroll;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -58,24 +59,16 @@ class EmployeeController {
 
     @GetMapping("/employees/moreThan50")
     List<Employee> getMoreThan50() {
-        List<Employee> lst = new ArrayList<>();
-        for (Employee i: repository.findAll()) {
-            if (i.getAge() > 50) {
-                lst.add(i);
-            }
-        }
-        return lst;
+        return repository.findAll().stream()
+                .filter(e -> e.getAge() > 50)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/employees/lessThan30")
     List<Employee> getLessThan30() {
-        List<Employee> lst = new ArrayList<>();
-        for (Employee i: repository.findAll()) {
-            if (i.getAge() < 30) {
-                lst.add(i);
-            }
-        }
-        return lst;
+        return repository.findAll().stream()
+                .filter(e -> e.getAge() < 30)
+                .collect(Collectors.toList());
     }
 
     @GetMapping("/employees/fullReport")
@@ -91,6 +84,7 @@ class EmployeeController {
             listOfAges.add(i.getAge());
             listOfSalaries.add(i.getSalary());
         }
+
         int sumOfAges = listOfAges.stream().mapToInt(Integer::intValue).sum();
         int avgOfAges = Math.floorDiv(sumOfAges, totalEmployees);
 
