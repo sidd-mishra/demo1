@@ -2,7 +2,7 @@ package payroll;
 
 public class SatTrade extends HubTrade {
 
-    private String tradePartIndex;
+    private int tradePartIndex;
     private String version;
     private String backOfficeNoteId;
     private String clearingServiceId;
@@ -18,47 +18,47 @@ public class SatTrade extends HubTrade {
     private String settlementCurrencyId;
     private String tradingEntityId;
     private String exchangeTradeCode;
-    private String accruedInterest;
+    private float accruedInterest;
     private String brokerage;
     private String businessTransaction;
     private String buySell;
     private String buySellSense;
     private String clientGrossBasis;
-    private String commission;
+    private float commission;
     private String counterpartyChargingRole;
     private String counterpartyReportingRole;
     private String firmChargingRole;
     private String dealingCapacity;
-    private String initialPrice;
+    private float initialPrice;
     private String initialPriceType;
     private String isMargin;
-    private String dealtPrice;
+    private float dealtPrice;
     private String dealtPriceType;
-    private String averageMarketGrossPrice;
-    private String averageMarketNetLocalPrice;
+    private float averageMarketGrossPrice;
+    private float averageMarketNetLocalPrice;
     private String averageMarketPriceCurrencyId;
-    private String dealtToSettlementRate;
+    private float dealtToSettlementRate;
     private String dealtToSettlementSense;
     private String deliveryMechanism;
     private String enteredDatetime;
-    private String facilitation;
+    private float facilitation;
     private String flags;
-    private String grossConsideration;
-    private String grossPrice;
-    private String instrumentToDealtRate;
+    private float grossConsideration;
+    private float grossPrice;
+    private float instrumentToDealtRate;
     private String instrumentToDealtSense;
-    private String marketCharges;
-    private String markup;
-    private String netConsideration;
-    private String netNetConsideration;
-    private String netNetPrice;
-    private String netPrice;
-    private String quantity;
+    private float marketCharges;
+    private float markup;
+    private float netConsideration;
+    private float netNetConsideration;
+    private float netNetPrice;
+    private float netPrice;
+    private float quantity;
     private String reportScenario;
     private String reportScenarioQualifier;
-    private String salesCredit;
-    private String settlementConsideration;
-    private String settlementDays;
+    private float salesCredit;
+    private float settlementConsideration;
+    private int settlementDays;
     private String state;
     private String tradedFlatOfAccrued;
     private String tradeDatetime;
@@ -67,14 +67,14 @@ public class SatTrade extends HubTrade {
     private String exchangeSpecific2;
     private String exchangeSpecific4;
     private String exchangeSpecific5;
-    private String minLegalShortSellPrice;
-    private String bidPrice;
-    private String offerPrice;
-    private String rootTradeVersion;
+    private float minLegalShortSellPrice;
+    private float bidPrice;
+    private float offerPrice;
+    private int rootTradeVersion;
     private String isFlipTrade;
-    private String settlementToFlipRate;
+    private float settlementToFlipRate;
     private String settlementToFlipSense;
-    private String estimatedCommission;
+    private float estimatedCommission;
     private String isSwingTrade;
     private String tradeSource;
     private String cptyTraderId;
@@ -87,13 +87,13 @@ public class SatTrade extends HubTrade {
     private String reportNotes;
     private String reportPriceType;
     private String reportFlags;
-    private String commissionArg;
+    private float commissionArg;
     private String commissionMethod;
-    private String markupArg;
+    private float markupArg;
     private String markupMethod;
-    private String salesCreditArg;
+    private float salesCreditArg;
     private String salesCreditMethod;
-    private String brokerageArg;
+    private float brokerageArg;
     private String brokerageMethod;
     private String orderAvgPrice;
     private String clearingFlags;
@@ -102,29 +102,29 @@ public class SatTrade extends HubTrade {
     private String clearingCode;
     private String foreignCurrency;
     private String foreignSettlementCurrency;
-    private String specialCreditArg;
+    private float specialCreditArg;
     private String specialCreditMethod;
-    private String brokerId1;
-    private String brokerBid1;
-    private String brokerAsk1;
-    private String brokerId2;
-    private String brokerBid2;
-    private String brokerAsk2;
-    private String brokerId3;
-    private String brokerBid3;
-    private String brokerAsk3;
+    private float brokerId1;
+    private float brokerBid1;
+    private float brokerAsk1;
+    private float brokerId2;
+    private float brokerBid2;
+    private float brokerAsk2;
+    private float brokerId3;
+    private float brokerBid3;
+    private float brokerAsk3;
     private String locateInfo;
     private String contributorRef;
     private String isStoppedFill;
     private String autoHouseSplit;
-    private String autoHouseDesired;
-    private String autoHouseAllowed;
-    private String autoHouseActual;
+    private int autoHouseDesired;
+    private float autoHouseAllowed;
+    private float autoHouseActual;
     private String executionVenue;
     private String executionId;
-    private String fillCommissionArg;
+    private float fillCommissionArg;
     private String fillCommissionMethod;
-    private String liquidityIndicator;
+    private int liquidityIndicator;
     private String countryCode;
     private String tradeThroughExemptionReason;
     private String bookingCapacity;
@@ -139,8 +139,8 @@ public class SatTrade extends HubTrade {
     private String executorId;
     private String custAllocationCounterpartyId;
     private String linkedBrokerCptyId;
-    private String minimumTradePrice;
-    private String maximumTradePrice;
+    private float minimumTradePrice;
+    private float maximumTradePrice;
     private String rootOrderId;
     private String orderVersion;
     private String globalOrderId;
@@ -163,7 +163,7 @@ public class SatTrade extends HubTrade {
 
     // Getters for all instance variables
 
-    public String getTradePartIndex() {
+    public int getTradePartIndex() {
         return tradePartIndex;
     }
 
@@ -227,7 +227,7 @@ public class SatTrade extends HubTrade {
         return exchangeTradeCode;
     }
 
-    public String getAccruedInterest() {
+    public float getAccruedInterest() {
         return accruedInterest;
     }
 
@@ -251,7 +251,7 @@ public class SatTrade extends HubTrade {
         return clientGrossBasis;
     }
 
-    public String getCommission() {
+    public float getCommission() {
         return commission;
     }
 
@@ -271,7 +271,7 @@ public class SatTrade extends HubTrade {
         return dealingCapacity;
     }
 
-    public String getInitialPrice() {
+    public float getInitialPrice() {
         return initialPrice;
     }
 
@@ -283,7 +283,7 @@ public class SatTrade extends HubTrade {
         return isMargin;
     }
 
-    public String getDealtPrice() {
+    public float getDealtPrice() {
         return dealtPrice;
     }
 
@@ -291,11 +291,11 @@ public class SatTrade extends HubTrade {
         return dealtPriceType;
     }
 
-    public String getAverageMarketGrossPrice() {
+    public float getAverageMarketGrossPrice() {
         return averageMarketGrossPrice;
     }
 
-    public String getAverageMarketNetLocalPrice() {
+    public float getAverageMarketNetLocalPrice() {
         return averageMarketNetLocalPrice;
     }
 
@@ -303,7 +303,7 @@ public class SatTrade extends HubTrade {
         return averageMarketPriceCurrencyId;
     }
 
-    public String getDealtToSettlementRate() {
+    public float getDealtToSettlementRate() {
         return dealtToSettlementRate;
     }
 
@@ -319,7 +319,7 @@ public class SatTrade extends HubTrade {
         return enteredDatetime;
     }
 
-    public String getFacilitation() {
+    public float getFacilitation() {
         return facilitation;
     }
 
@@ -327,15 +327,15 @@ public class SatTrade extends HubTrade {
         return flags;
     }
 
-    public String getGrossConsideration() {
+    public float getGrossConsideration() {
         return grossConsideration;
     }
 
-    public String getGrossPrice() {
+    public float getGrossPrice() {
         return grossPrice;
     }
 
-    public String getInstrumentToDealtRate() {
+    public float getInstrumentToDealtRate() {
         return instrumentToDealtRate;
     }
 
@@ -343,31 +343,31 @@ public class SatTrade extends HubTrade {
         return instrumentToDealtSense;
     }
 
-    public String getMarketCharges() {
+    public float getMarketCharges() {
         return marketCharges;
     }
 
-    public String getMarkup() {
+    public float getMarkup() {
         return markup;
     }
 
-    public String getNetConsideration() {
+    public float getNetConsideration() {
         return netConsideration;
     }
 
-    public String getNetNetConsideration() {
+    public float getNetNetConsideration() {
         return netNetConsideration;
     }
 
-    public String getNetNetPrice() {
+    public float getNetNetPrice() {
         return netNetPrice;
     }
 
-    public String getNetPrice() {
+    public float getNetPrice() {
         return netPrice;
     }
 
-    public String getQuantity() {
+    public float getQuantity() {
         return quantity;
     }
 
@@ -379,15 +379,15 @@ public class SatTrade extends HubTrade {
         return reportScenarioQualifier;
     }
 
-    public String getSalesCredit() {
+    public float getSalesCredit() {
         return salesCredit;
     }
 
-    public String getSettlementConsideration() {
+    public float getSettlementConsideration() {
         return settlementConsideration;
     }
 
-    public String getSettlementDays() {
+    public int getSettlementDays() {
         return settlementDays;
     }
 
@@ -423,19 +423,19 @@ public class SatTrade extends HubTrade {
         return exchangeSpecific5;
     }
 
-    public String getMinLegalShortSellPrice() {
+    public float getMinLegalShortSellPrice() {
         return minLegalShortSellPrice;
     }
 
-    public String getBidPrice() {
+    public float getBidPrice() {
         return bidPrice;
     }
 
-    public String getOfferPrice() {
+    public float getOfferPrice() {
         return offerPrice;
     }
 
-    public String getRootTradeVersion() {
+    public int getRootTradeVersion() {
         return rootTradeVersion;
     }
 
@@ -443,7 +443,7 @@ public class SatTrade extends HubTrade {
         return isFlipTrade;
     }
 
-    public String getSettlementToFlipRate() {
+    public float getSettlementToFlipRate() {
         return settlementToFlipRate;
     }
 
@@ -451,7 +451,7 @@ public class SatTrade extends HubTrade {
         return settlementToFlipSense;
     }
 
-    public String getEstimatedCommission() {
+    public float getEstimatedCommission() {
         return estimatedCommission;
     }
 
@@ -503,7 +503,7 @@ public class SatTrade extends HubTrade {
         return reportFlags;
     }
 
-    public String getCommissionArg() {
+    public float getCommissionArg() {
         return commissionArg;
     }
 
@@ -511,7 +511,7 @@ public class SatTrade extends HubTrade {
         return commissionMethod;
     }
 
-    public String getMarkupArg() {
+    public float getMarkupArg() {
         return markupArg;
     }
 
@@ -519,7 +519,7 @@ public class SatTrade extends HubTrade {
         return markupMethod;
     }
 
-    public String getSalesCreditArg() {
+    public float getSalesCreditArg() {
         return salesCreditArg;
     }
 
@@ -527,7 +527,7 @@ public class SatTrade extends HubTrade {
         return salesCreditMethod;
     }
 
-    public String getBrokerageArg() {
+    public float getBrokerageArg() {
         return brokerageArg;
     }
 
@@ -563,7 +563,7 @@ public class SatTrade extends HubTrade {
         return foreignSettlementCurrency;
     }
 
-    public String getSpecialCreditArg() {
+    public float getSpecialCreditArg() {
         return specialCreditArg;
     }
 
@@ -571,39 +571,39 @@ public class SatTrade extends HubTrade {
         return specialCreditMethod;
     }
 
-    public String getBrokerId1() {
+    public float getBrokerId1() {
         return brokerId1;
     }
 
-    public String getBrokerBid1() {
+    public float getBrokerBid1() {
         return brokerBid1;
     }
 
-    public String getBrokerAsk1() {
+    public float getBrokerAsk1() {
         return brokerAsk1;
     }
 
-    public String getBrokerId2() {
+    public float getBrokerId2() {
         return brokerId2;
     }
 
-    public String getBrokerBid2() {
+    public float getBrokerBid2() {
         return brokerBid2;
     }
 
-    public String getBrokerAsk2() {
+    public float getBrokerAsk2() {
         return brokerAsk2;
     }
 
-    public String getBrokerId3() {
+    public float getBrokerId3() {
         return brokerId3;
     }
 
-    public String getBrokerBid3() {
+    public float getBrokerBid3() {
         return brokerBid3;
     }
 
-    public String getBrokerAsk3() {
+    public float getBrokerAsk3() {
         return brokerAsk3;
     }
 
@@ -623,15 +623,15 @@ public class SatTrade extends HubTrade {
         return autoHouseSplit;
     }
 
-    public String getAutoHouseDesired() {
+    public int getAutoHouseDesired() {
         return autoHouseDesired;
     }
 
-    public String getAutoHouseAllowed() {
+    public float getAutoHouseAllowed() {
         return autoHouseAllowed;
     }
 
-    public String getAutoHouseActual() {
+    public float getAutoHouseActual() {
         return autoHouseActual;
     }
 
@@ -643,7 +643,7 @@ public class SatTrade extends HubTrade {
         return executionId;
     }
 
-    public String getFillCommissionArg() {
+    public float getFillCommissionArg() {
         return fillCommissionArg;
     }
 
@@ -651,7 +651,7 @@ public class SatTrade extends HubTrade {
         return fillCommissionMethod;
     }
 
-    public String getLiquidityIndicator() {
+    public int getLiquidityIndicator() {
         return liquidityIndicator;
     }
 
@@ -711,11 +711,11 @@ public class SatTrade extends HubTrade {
         return linkedBrokerCptyId;
     }
 
-    public String getMinimumTradePrice() {
+    public float getMinimumTradePrice() {
         return minimumTradePrice;
     }
 
-    public String getMaximumTradePrice() {
+    public float getMaximumTradePrice() {
         return maximumTradePrice;
     }
 
@@ -797,7 +797,7 @@ public class SatTrade extends HubTrade {
 
     // Setters for all instance variables
 
-    public void setTradePartIndex(String tradePartIndex) {
+    public void setTradePartIndex(int tradePartIndex) {
         this.tradePartIndex = tradePartIndex;
     }
 
@@ -861,7 +861,7 @@ public class SatTrade extends HubTrade {
         this.exchangeTradeCode = exchangeTradeCode;
     }
 
-    public void setAccruedInterest(String accruedInterest) {
+    public void setAccruedInterest(float accruedInterest) {
         this.accruedInterest = accruedInterest;
     }
 
@@ -885,7 +885,7 @@ public class SatTrade extends HubTrade {
         this.clientGrossBasis = clientGrossBasis;
     }
 
-    public void setCommission(String commission) {
+    public void setCommission(float commission) {
         this.commission = commission;
     }
 
@@ -905,7 +905,7 @@ public class SatTrade extends HubTrade {
         this.dealingCapacity = dealingCapacity;
     }
 
-    public void setInitialPrice(String initialPrice) {
+    public void setInitialPrice(float initialPrice) {
         this.initialPrice = initialPrice;
     }
 
@@ -917,7 +917,7 @@ public class SatTrade extends HubTrade {
         this.isMargin = isMargin;
     }
 
-    public void setDealtPrice(String dealtPrice) {
+    public void setDealtPrice(float dealtPrice) {
         this.dealtPrice = dealtPrice;
     }
 
@@ -925,11 +925,11 @@ public class SatTrade extends HubTrade {
         this.dealtPriceType = dealtPriceType;
     }
 
-    public void setAverageMarketGrossPrice(String averageMarketGrossPrice) {
+    public void setAverageMarketGrossPrice(float averageMarketGrossPrice) {
         this.averageMarketGrossPrice = averageMarketGrossPrice;
     }
 
-    public void setAverageMarketNetLocalPrice(String averageMarketNetLocalPrice) {
+    public void setAverageMarketNetLocalPrice(float averageMarketNetLocalPrice) {
         this.averageMarketNetLocalPrice = averageMarketNetLocalPrice;
     }
 
@@ -937,7 +937,7 @@ public class SatTrade extends HubTrade {
         this.averageMarketPriceCurrencyId = averageMarketPriceCurrencyId;
     }
 
-    public void setDealtToSettlementRate(String dealtToSettlementRate) {
+    public void setDealtToSettlementRate(float dealtToSettlementRate) {
         this.dealtToSettlementRate = dealtToSettlementRate;
     }
 
@@ -953,7 +953,7 @@ public class SatTrade extends HubTrade {
         this.enteredDatetime = enteredDatetime;
     }
 
-    public void setFacilitation(String facilitation) {
+    public void setFacilitation(float facilitation) {
         this.facilitation = facilitation;
     }
 
@@ -961,15 +961,15 @@ public class SatTrade extends HubTrade {
         this.flags = flags;
     }
 
-    public void setGrossConsideration(String grossConsideration) {
+    public void setGrossConsideration(float grossConsideration) {
         this.grossConsideration = grossConsideration;
     }
 
-    public void setGrossPrice(String grossPrice) {
+    public void setGrossPrice(float grossPrice) {
         this.grossPrice = grossPrice;
     }
 
-    public void setInstrumentToDealtRate(String instrumentToDealtRate) {
+    public void setInstrumentToDealtRate(float instrumentToDealtRate) {
         this.instrumentToDealtRate = instrumentToDealtRate;
     }
 
@@ -977,31 +977,31 @@ public class SatTrade extends HubTrade {
         this.instrumentToDealtSense = instrumentToDealtSense;
     }
 
-    public void setMarketCharges(String marketCharges) {
+    public void setMarketCharges(float marketCharges) {
         this.marketCharges = marketCharges;
     }
 
-    public void setMarkup(String markup) {
+    public void setMarkup(float markup) {
         this.markup = markup;
     }
 
-    public void setNetConsideration(String netConsideration) {
+    public void setNetConsideration(float netConsideration) {
         this.netConsideration = netConsideration;
     }
 
-    public void setNetNetConsideration(String netNetConsideration) {
+    public void setNetNetConsideration(float netNetConsideration) {
         this.netNetConsideration = netNetConsideration;
     }
 
-    public void setNetNetPrice(String netNetPrice) {
+    public void setNetNetPrice(float netNetPrice) {
         this.netNetPrice = netNetPrice;
     }
 
-    public void setNetPrice(String netPrice) {
+    public void setNetPrice(float netPrice) {
         this.netPrice = netPrice;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(float quantity) {
         this.quantity = quantity;
     }
 
@@ -1013,15 +1013,15 @@ public class SatTrade extends HubTrade {
         this.reportScenarioQualifier = reportScenarioQualifier;
     }
 
-    public void setSalesCredit(String salesCredit) {
+    public void setSalesCredit(float salesCredit) {
         this.salesCredit = salesCredit;
     }
 
-    public void setSettlementConsideration(String settlementConsideration) {
+    public void setSettlementConsideration(float settlementConsideration) {
         this.settlementConsideration = settlementConsideration;
     }
 
-    public void setSettlementDays(String settlementDays) {
+    public void setSettlementDays(int settlementDays) {
         this.settlementDays = settlementDays;
     }
 
@@ -1057,19 +1057,19 @@ public class SatTrade extends HubTrade {
         this.exchangeSpecific5 = exchangeSpecific5;
     }
 
-    public void setMinLegalShortSellPrice(String minLegalShortSellPrice) {
+    public void setMinLegalShortSellPrice(float minLegalShortSellPrice) {
         this.minLegalShortSellPrice = minLegalShortSellPrice;
     }
 
-    public void setBidPrice(String bidPrice) {
+    public void setBidPrice(float bidPrice) {
         this.bidPrice = bidPrice;
     }
 
-    public void setOfferPrice(String offerPrice) {
+    public void setOfferPrice(float offerPrice) {
         this.offerPrice = offerPrice;
     }
 
-    public void setRootTradeVersion(String rootTradeVersion) {
+    public void setRootTradeVersion(int rootTradeVersion) {
         this.rootTradeVersion = rootTradeVersion;
     }
 
@@ -1077,7 +1077,7 @@ public class SatTrade extends HubTrade {
         this.isFlipTrade = isFlipTrade;
     }
 
-    public void setSettlementToFlipRate(String settlementToFlipRate) {
+    public void setSettlementToFlipRate(float settlementToFlipRate) {
         this.settlementToFlipRate = settlementToFlipRate;
     }
 
@@ -1085,7 +1085,7 @@ public class SatTrade extends HubTrade {
         this.settlementToFlipSense = settlementToFlipSense;
     }
 
-    public void setEstimatedCommission(String estimatedCommission) {
+    public void setEstimatedCommission(float estimatedCommission) {
         this.estimatedCommission = estimatedCommission;
     }
 
@@ -1137,7 +1137,7 @@ public class SatTrade extends HubTrade {
         this.reportFlags = reportFlags;
     }
 
-    public void setCommissionArg(String commissionArg) {
+    public void setCommissionArg(float commissionArg) {
         this.commissionArg = commissionArg;
     }
 
@@ -1145,7 +1145,7 @@ public class SatTrade extends HubTrade {
         this.commissionMethod = commissionMethod;
     }
 
-    public void setMarkupArg(String markupArg) {
+    public void setMarkupArg(float markupArg) {
         this.markupArg = markupArg;
     }
 
@@ -1153,7 +1153,7 @@ public class SatTrade extends HubTrade {
         this.markupMethod = markupMethod;
     }
 
-    public void setSalesCreditArg(String salesCreditArg) {
+    public void setSalesCreditArg(float salesCreditArg) {
         this.salesCreditArg = salesCreditArg;
     }
 
@@ -1161,7 +1161,7 @@ public class SatTrade extends HubTrade {
         this.salesCreditMethod = salesCreditMethod;
     }
 
-    public void setBrokerageArg(String brokerageArg) {
+    public void setBrokerageArg(float brokerageArg) {
         this.brokerageArg = brokerageArg;
     }
 
@@ -1197,7 +1197,7 @@ public class SatTrade extends HubTrade {
         this.foreignSettlementCurrency = foreignSettlementCurrency;
     }
 
-    public void setSpecialCreditArg(String specialCreditArg) {
+    public void setSpecialCreditArg(float specialCreditArg) {
         this.specialCreditArg = specialCreditArg;
     }
 
@@ -1205,39 +1205,39 @@ public class SatTrade extends HubTrade {
         this.specialCreditMethod = specialCreditMethod;
     }
 
-    public void setBrokerId1(String brokerId1) {
+    public void setBrokerId1(float brokerId1) {
         this.brokerId1 = brokerId1;
     }
 
-    public void setBrokerBid1(String brokerBid1) {
+    public void setBrokerBid1(float brokerBid1) {
         this.brokerBid1 = brokerBid1;
     }
 
-    public void setBrokerAsk1(String brokerAsk1) {
+    public void setBrokerAsk1(float brokerAsk1) {
         this.brokerAsk1 = brokerAsk1;
     }
 
-    public void setBrokerId2(String brokerId2) {
+    public void setBrokerId2(float brokerId2) {
         this.brokerId2 = brokerId2;
     }
 
-    public void setBrokerBid2(String brokerBid2) {
+    public void setBrokerBid2(float brokerBid2) {
         this.brokerBid2 = brokerBid2;
     }
 
-    public void setBrokerAsk2(String brokerAsk2) {
+    public void setBrokerAsk2(float brokerAsk2) {
         this.brokerAsk2 = brokerAsk2;
     }
 
-    public void setBrokerId3(String brokerId3) {
+    public void setBrokerId3(float brokerId3) {
         this.brokerId3 = brokerId3;
     }
 
-    public void setBrokerBid3(String brokerBid3) {
+    public void setBrokerBid3(float brokerBid3) {
         this.brokerBid3 = brokerBid3;
     }
 
-    public void setBrokerAsk3(String brokerAsk3) {
+    public void setBrokerAsk3(float brokerAsk3) {
         this.brokerAsk3 = brokerAsk3;
     }
 
@@ -1257,15 +1257,15 @@ public class SatTrade extends HubTrade {
         this.autoHouseSplit = autoHouseSplit;
     }
 
-    public void setAutoHouseDesired(String autoHouseDesired) {
+    public void setAutoHouseDesired(int autoHouseDesired) {
         this.autoHouseDesired = autoHouseDesired;
     }
 
-    public void setAutoHouseAllowed(String autoHouseAllowed) {
+    public void setAutoHouseAllowed(float autoHouseAllowed) {
         this.autoHouseAllowed = autoHouseAllowed;
     }
 
-    public void setAutoHouseActual(String autoHouseActual) {
+    public void setAutoHouseActual(float autoHouseActual) {
         this.autoHouseActual = autoHouseActual;
     }
 
@@ -1277,7 +1277,7 @@ public class SatTrade extends HubTrade {
         this.executionId = executionId;
     }
 
-    public void setFillCommissionArg(String fillCommissionArg) {
+    public void setFillCommissionArg(float fillCommissionArg) {
         this.fillCommissionArg = fillCommissionArg;
     }
 
@@ -1285,7 +1285,7 @@ public class SatTrade extends HubTrade {
         this.fillCommissionMethod = fillCommissionMethod;
     }
 
-    public void setLiquidityIndicator(String liquidityIndicator) {
+    public void setLiquidityIndicator(int liquidityIndicator) {
         this.liquidityIndicator = liquidityIndicator;
     }
 
@@ -1345,11 +1345,11 @@ public class SatTrade extends HubTrade {
         this.linkedBrokerCptyId = linkedBrokerCptyId;
     }
 
-    public void setMinimumTradePrice(String minimumTradePrice) {
+    public void setMinimumTradePrice(float minimumTradePrice) {
         this.minimumTradePrice = minimumTradePrice;
     }
 
-    public void setMaximumTradePrice(String maximumTradePrice) {
+    public void setMaximumTradePrice(float maximumTradePrice) {
         this.maximumTradePrice = maximumTradePrice;
     }
 
