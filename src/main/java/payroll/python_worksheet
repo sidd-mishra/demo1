@@ -1,0 +1,25 @@
+# The Snowpark package is required for Python Worksheets.
+# You can add more packages by selecting them using the Packages control and then importing them.
+import snowflake.snowpark as snowpark
+from snowflake.snowpark.functions import col
+import json
+
+def main(session: snowpark.Session):
+    table_name = 'DATA_VAULT_CONFIG_AMA'
+    schema_name = 'JAID_OWNER'
+    database_name = 'JDS_LIVE_DB'
+
+    # Load the table into a dataframe
+    dataframe = session.table(f'{database_name}.{schema_name}.{table_name}')
+
+    # Convert the dataframe to a Pandas dataframe
+    pandas_df = dataframe.to_pandas()
+
+    # Convert the Pandas dataframe to a JSON string
+    json_output = pandas_df.to_json(orient='records')
+
+    # Print the JSON output to standard output
+    print(json_output)
+
+    # Return the JSON output for use in the Results tab
+    return json_output
